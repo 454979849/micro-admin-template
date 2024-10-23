@@ -148,13 +148,19 @@ const dataListener = generateDataListener({
   },
 });
 
+/**
+ * 局域网共享ip地址
+ * 需在项目内新建.evn，填写VITE_local_ipv6
+ */
+const localDevIp = import.meta.env.VITE_local_ipv6 || '127.0.0.1';
+
 window._subAppSettingList_ = [
   {
     name: 'micromain',
     prefix: 'micromain',
     routerMode: 'history',
     urlMap: {
-      localhost: '//127.0.0.1:1314/micromain/',
+      localhost: `http://${localDevIp}:1314/micromain/`,
       test: 'https://micro-admin-template.lammu.cn/micromain/',
       pre: 'https://micro-admin-template.lammu.cn/micromain/',
       master: 'https://micro-admin-template.lammu.cn/micromain/',
@@ -168,7 +174,7 @@ window._subAppSettingList_ = [
     prefix: 'vue3',
     routerMode: 'hash',
     urlMap: {
-      localhost: '//127.0.0.1:1320/vue3/',
+      localhost: `http://${localDevIp}:1320/vue3/`,
       test: 'https://micro-admin-template.lammu.cn/vue3/',
       pre: 'https://micro-admin-template.lammu.cn/vue3/',
       master: 'https://micro-admin-template.lammu.cn/vue3/',
@@ -182,7 +188,7 @@ window._subAppSettingList_ = [
     prefix: 'vue2',
     routerMode: 'hash',
     urlMap: {
-      localhost: '//127.0.0.1:1330/vue2/',
+      localhost: `http://${localDevIp}:1330/vue2/`,
       test: 'https://micro-admin-template.lammu.cn/vue2/',
       pre: 'https://micro-admin-template.lammu.cn/vue2/',
       master: 'https://micro-admin-template.lammu.cn/vue2/',
@@ -196,7 +202,7 @@ window._subAppSettingList_ = [
     prefix: 'react18',
     routerMode: 'hash',
     urlMap: {
-      localhost: '//127.0.0.1:1340/react18/',
+      localhost: `http://${localDevIp}:1340/react18/`,
       test: 'https://micro-admin-template.lammu.cn/react18/',
       pre: 'https://micro-admin-template.lammu.cn/react18/',
       master: 'https://micro-admin-template.lammu.cn/react18/',
@@ -210,7 +216,7 @@ window._subAppSettingList_ = [
     prefix: 'vue2v',
     routerMode: 'hash',
     urlMap: {
-      localhost: '//127.0.0.1:1350/vue2v/',
+      localhost: `http://${localDevIp}:1350/vue2v/`,
       test: 'https://micro-admin-template.lammu.cn/vue2v/',
       pre: 'https://micro-admin-template.lammu.cn/vue2v/',
       master: 'https://micro-admin-template.lammu.cn/vue2v/',
