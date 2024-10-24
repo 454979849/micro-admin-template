@@ -27,7 +27,7 @@ function reactComponentMountCallback(
   weakMap.set(key, root);
 
   /** 上下文缓存 */
-  let ctxCache: any;
+  let ctxCache: { current: any } = { current: undefined };
   /** 在组件挂载完成后设置上下文 */
   function setReactCtxOnMounted(ctx?: any) {
     if (ctx) ctxCache = ctx;
