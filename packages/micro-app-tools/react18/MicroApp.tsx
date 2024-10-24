@@ -6,7 +6,12 @@ import type { MutableRefObject } from 'react';
 import microApp from '@micro-zoe/micro-app';
 
 import { MicroAppConfig, dataListener, microAppInitFunction } from '../data';
-import { getAppIsInConfig, getSubAppPrefixFromRouteUrl, isSubApp, sendDataDown } from '../index';
+import {
+  getAppIsInConfig,
+  getSubAppPrefixFromRouteUrl,
+  isSubApp,
+  sendDataDown,
+} from '../index';
 import { SubAppSetting } from '../types';
 
 interface MicroAppProps {
@@ -17,7 +22,7 @@ interface MicroAppProps {
   /** 子应用名称 */
   _name?: string;
   /** 强制初始化微前端环境 (默认顶级、二级应用会自动初始化微前端环境) */
-  _forceInit?: boolean
+  _forceInit?: boolean;
   /**
    * 要跳转的路径, 一般不要带查询参数
    * @example /#/ExportComponent/contract/ContractDetailByUUID
@@ -51,6 +56,7 @@ interface MicroAppProps {
   config?: React.FC;
 }
 
+/** 微前端环境是否已经初始化 */
 let isInited = false;
 
 const MicroApp: React.FC<never> = (props: MicroAppProps) => {
