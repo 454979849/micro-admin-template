@@ -27,7 +27,7 @@ const schemaInsRef = ref<InstanceType<typeof UseSchemaRender>>();
 
 /** 调用低代码里面的onClick方法 */
 function SchemaOnClick() {
-  schemaInsRef.value?.getCxt()?.onClick?.();
+  schemaInsRef.value?.getCxt()?.current?.onClick?.();
 }
 </script>
 

@@ -1,7 +1,18 @@
-import { useState } from 'react';
+import React, { useRef, useState, forwardRef, useImperativeHandle, ForwardRefExoticComponent } from 'react';
+import { forwardRefWrap } from 'micro-app-tools/react18/utils';
 
-export default function Comp() {
-  const [count, setCount] = useState(100);
+const reactCompDemo = forwardRef(function Comp(props: {
+  value: number
+}, ref: any) {
+  const [count, setCount] = useState(props.value || 99);
+
+  useImperativeHandle(ref, () => {
+    return {
+      increaseDouble() {
+        setCount(count + 2);
+      },
+    };
+  });
 
   return (
     <>
@@ -11,4 +22,6 @@ export default function Comp() {
       </div>
     </>
   );
-}
+})
+
+export default forwardRefWrap(reactCompDemo);

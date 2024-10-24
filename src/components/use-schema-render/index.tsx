@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, forwardRef, useImperativeHandle } from 'react';
 import {
   buildComponents,
   assetBundle,
@@ -67,8 +67,8 @@ const SchemaRender = (props: {
 
   function onCompGetCtx(schema: any, ctx: any) {
 
-    props.setReactCtxOnMounted?.(ctx);
-    if (props.setReactCtxOnMounted) console.log('重新设置')
+    /** 传递上下文给外部 */
+    props.setReactCtxOnMounted?.({ current: ctx });
 
     if (!isSeted && schema.componentName == 'Page') {
       ctx.remoteHandleMap = generateRemoteHandleMap.call(
@@ -78,21 +78,6 @@ const SchemaRender = (props: {
       isSeted = true;
     }
   }
-
-  // useEffect(() => {
-  //   console.log('ctx props2222', props)
-  //   props.getRefRef?.({
-  //     now: Date.now()
-  //   })
-  // }, []);
-
-  // useImperativeHandle(ref, () => {
-  //   return {
-  //     sfnskjngvdffds() {
-  //       console.log('2423423432423')
-  //     },
-  //   };
-  // });
 
   return (
     <ReactRenderer

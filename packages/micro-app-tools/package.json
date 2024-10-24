@@ -22,7 +22,8 @@
     "./vue2/MicroComponent.vue": "./vue2/MicroComponent.vue",
     "./react18/index": "./react18/index.js",
     "./react18/MicroComponent": "./react18/MicroComponent.jsx",
-    "./react18/MicroApp": "./react18/MicroApp.jsx"
+    "./react18/MicroApp": "./react18/MicroApp.jsx",
+    "./react18/utils": "./react18/utils.jsx"
   },
   "scripts": {
     "build": "tsc",
