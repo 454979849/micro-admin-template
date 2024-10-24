@@ -8,6 +8,7 @@ const weakMap = new WeakMap();
 
 /**
  * 渲染react组件到dom节点
+ * @return 获取上下文方法
  */
 function reactComponentMountCallback(
   /** dom节点 */
@@ -19,11 +20,27 @@ function reactComponentMountCallback(
   options: {
     props: any;
   }
-) {
+): () => any {
   const root = createRoot(dom);
+
+  /** root存起来 */
   weakMap.set(key, root);
+
+  /** 上下文缓存 */
+  let ctxCache: any;
+  /** 在组件挂载完成后设置上下文 */
+  function setReactCtxOnMounted(ctx?: any) {
+    if (ctx) ctxCache = ctx;
+    return ctxCache;
+  }
+
   /** 此函数必须在单独的tsx文件中运行!!! */
-  root.render(<ReactComp {...options.props}></ReactComp>);
+  root.render(<ReactComp setReactCtxOnMounted={setReactCtxOnMounted} {...options.props}></ReactComp>);
+
+  /** 返回获取上下文函数 */
+  return function getCtx() {
+    return ctxCache;
+  }
 }
 
 /**

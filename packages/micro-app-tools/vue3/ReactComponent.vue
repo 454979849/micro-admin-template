@@ -28,6 +28,9 @@ const key = Symbol();
 /** 渲染节点 */
 const renderDom = ref<HTMLElement | undefined>(undefined);
 
+/** 获取react组件ref的方法，组件mounted后会重置这个变量 */
+let getReactRefMethod: Function = () => undefined;
+
 /**
  * 剩余参数变化, 重新渲染
  */
@@ -42,7 +45,7 @@ watchEffect(() => {
  */
 onMounted(() => {
   if (renderDom.value) {
-    reactComponentMountCallback(renderDom.value, key, props._is, {
+    getReactRefMethod = reactComponentMountCallback(renderDom.value, key, props._is, {
       props: { ...otherProps },
     });
   }
@@ -53,5 +56,15 @@ onMounted(() => {
  */
 onUnmounted(() => {
   reactComponentUnMountCallback(key);
+});
+
+defineExpose({
+  /**
+   * 获取react组件实例
+   * ps：要想用这个方法，需修改react组件代码，在初始完成时调用props.setReactCtxOnMounted?.(ctx);
+   */
+  getReactRef() {
+    return getReactRefMethod();
+  },
 });
 </script>

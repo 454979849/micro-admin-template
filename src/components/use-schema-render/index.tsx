@@ -14,7 +14,11 @@ import { generateRemoteHandleMap } from './lowcode-utils/index.esm';
 /** 只赋值一次上下文! */
 let isSeted = false;
 
-const SchemaRender = (props: { nodeId: number }) => {
+const SchemaRender = (props: {
+  nodeId: number,
+  /** 在组件挂载完成后设置上下文（给外部） */
+  setReactCtxOnMounted?: Function
+}) => {
   useEffect(() => {
     init();
   }, []);
@@ -62,6 +66,10 @@ const SchemaRender = (props: { nodeId: number }) => {
   }
 
   function onCompGetCtx(schema: any, ctx: any) {
+
+    props.setReactCtxOnMounted?.(ctx);
+    if (props.setReactCtxOnMounted) console.log('重新设置')
+
     if (!isSeted && schema.componentName == 'Page') {
       ctx.remoteHandleMap = generateRemoteHandleMap.call(
         ctx,
@@ -70,6 +78,21 @@ const SchemaRender = (props: { nodeId: number }) => {
       isSeted = true;
     }
   }
+
+  // useEffect(() => {
+  //   console.log('ctx props2222', props)
+  //   props.getRefRef?.({
+  //     now: Date.now()
+  //   })
+  // }, []);
+
+  // useImperativeHandle(ref, () => {
+  //   return {
+  //     sfnskjngvdffds() {
+  //       console.log('2423423432423')
+  //     },
+  //   };
+  // });
 
   return (
     <ReactRenderer
