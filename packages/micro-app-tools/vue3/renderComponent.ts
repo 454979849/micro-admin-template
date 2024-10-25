@@ -1,4 +1,4 @@
-import { isTopApp } from '..';
+import { isTopApp } from '../index';
 import {
   ElConfigProvider,
   MicroComponentInstanceMap,
