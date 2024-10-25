@@ -15,9 +15,15 @@ export const adminWorkbenchRoute = {
 export const baseRoutes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'Layout_40x',
+    name: 'Layout_common',
     component: () => import('@/layouts/index.vue'),
     children: [
+      {
+        path: '/introduce',
+        name: 'introduce',
+        component: () => import('@/pages/introduce.vue'),
+        meta: { title: '介绍页' },
+      },
       {
         path: '/404',
         name: 'Page404',
