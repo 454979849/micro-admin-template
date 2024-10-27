@@ -129,7 +129,7 @@ export async function getUserMenus() {
       ],
       prefixName: '/',
       name: '主应用页面',
-      icon: 'https://pro.spicyboy.cn/assets/svg/logo-CqE24J1b.svg',
+      icon: 'Github',
       sort: 0,
       hidden: false,
       targetType: 3,

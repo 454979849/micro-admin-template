@@ -4,12 +4,19 @@
     :index="props.level"
   >
     <template #title>
-      <img
-        v-if="menuInfo.icon"
-        class="__menu-icon"
-        :src="menuInfo.icon"
-        alt="icon"
-      />
+      <!-- 图标 -->
+      <template v-if="menuInfo.icon">
+        <!-- 外链 -->
+        <img
+          v-if="isExternal(menuInfo.icon) || menuInfo.icon.startsWith('/')"
+          class="__menu-icon"
+          :src="menuInfo.icon"
+          alt="icon"
+        />
+        <!-- svg图标 -->
+        <use-svg v-else class="__menu-icon" :name="menuInfo.icon"/>
+      </template>
+      
       <span class="-m-ellipsis">{{ menuInfo.name }}</span>
     </template>
     <MenuItem
@@ -44,6 +51,7 @@ import { defineComponent } from 'vue';
 import { ElMenuItem, ElSubMenu } from 'element-plus';
 import 'element-plus/es/components/menu-item/style/index';
 import 'element-plus/es/components/sub-menu/style/index';
+import { isExternal } from '@/utils';
 
 const props = defineProps({
   menuInfo: {
