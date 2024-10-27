@@ -44,6 +44,27 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import { Vue3Lottie } from 'vue3-lottie';
 import ElDialog from '@/components/el-dialog/index.vue';
 import Config from './utils/Config';
+import { copyText, isMobile } from './utils';
+
+/**
+ * 移动端提示
+ */
+(function checkIsMobile() {
+  if (isMobile()) {
+    setTimeout(() => {
+      ElMessageBox.confirm('后台管理系统建议电脑或平板打开?', '设备兼容提示', {
+        confirmButtonText: '复制网站链接',
+        cancelButtonText: '我就看看',
+        type: 'warning',
+        closeOnClickModal: false,
+      }).then(() => {
+        copyText(location.href, () => ElMessage.success('已复制网站链接，请用电脑或平板观看'), () =>  ElMessage.error('复制失败，请手动复制'));
+      }).catch(() => {
+        ElMessage.warning('移动端竖屏观看效果更佳');
+      })
+    })
+  }
+})();
 
 /**
  * 启动共享Worker来检测版本更新
