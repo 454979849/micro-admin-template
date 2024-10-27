@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="-m-card lightcoral">
+    <section class="-m-card">
       <span class="-m-title">低代码渲染器</span>
       <div class="lowcode-card">
         <UseSchemaRender

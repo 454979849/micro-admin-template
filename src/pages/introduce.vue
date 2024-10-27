@@ -2,14 +2,14 @@
   <div class="introduce">
     <section class="-m-card">
       <h2 className="-m-title">项目介绍</h2>
-      <p>这是一个<b>后台模板</b>。它集成了<b>微前端</b>，允许将项目拆分成不同的子应用，独立开发，独立部署，同时子应用<b>不限制框架</b>。也就是说子应用可以用react/vue3/vue2进行开发，点击右侧菜单可以预览</p>
+      <p>这是一个<b>后台模板</b>。它集成了<b><a href="http://baidu.com" target="_blank">京东micro-app微前端框架</a></b>，允许将项目拆分成不同的子应用，独立开发，独立部署，同时子应用<b>不限制框架</b>。也就是说子应用可以用react/vue3/vue2进行开发，点击右侧菜单可以预览</p>
     </section>
     
     <section class="-m-card" style="background-color: #f1f9fb;">
       <span className="-m-title">项目组成</span>
       <p>
         该demo由5个独立的项目仓库组成，其中一个主应用，4个不同技术栈的子应用<br/>
-        按设计主应用包括Layout布局(包括头部/侧边菜单)、 基础页面(404/403/登录页)、用户公共信息加载逻辑(用户信息/菜单信息/权限信息)
+        按设计主应用包括Layout布局(包括头部/侧边菜单)、 基础页面(404/403/登录页)、用户公共信息加载逻辑(用户信息/菜单信息/权限信息)<br/>
         子应用不用重复编写Layout布局，子需要关心对应页面的内容区域<br/>
         <br/>
         <span style="font-size: larger; display: block; margin-bottom: .3em;">各项目技术栈：</span>
@@ -25,13 +25,13 @@
       <h2 className="-m-title">菜单介绍</h2>
       <p>
         <span style="font-size: larger; display: block; margin-bottom: .3em;">主应用测试了以下功能：</span>
-        <b>在线预览网站</b>：可以通过url直接嵌入预览其他网站（目标网站需配置支持跨域）<br/>
-        <b>vueFlow测试</b>：集成了vue-flow第三方库，后续打算通过派发组件的方式提供给子应用直接调用<br/>
-        <b>阿里低代码</b>：集成了阿里开源的低代码引擎，支持渲染低代码页面（详情见👇低代码介绍）<br/>
+        <b class="link" @click="() => router.push('/onlinePreview')">在线预览网站</b>：可以通过url直接嵌入预览其他网站（目标网站需配置支持跨域）<br/>
+        <b class="link" @click="() => router.push('/demo/vueFlow')">vueFlow测试</b>：集成了vue-flow第三方库，后续打算通过派发组件的方式提供给子应用直接调用<br/>
+        <b class="link" @click="() => router.push('/demo/lowcodeEngine')">阿里低代码</b>：集成了阿里开源的低代码引擎，支持渲染低代码页面（详情见👇低代码介绍）<br/>
         <br/>
         <span style="font-size: larger; display: block; margin-bottom: .3em;">子应用均测试了不同的功能：</span>
         首页：测试了<b>lottie动画</b><br/>
-        <b>派发组件</b>：测试子应用直接调用主应用下发的组件是否能正常使用（可跨框架使用）<br/>
+        <b>派发组件</b>：测试子应用直接调用主应用下发的组件（Svg/TinyMce）是否能正常使用（可跨框架使用）<br/>
         <b>路由组件</b>：测试子应用嵌套子应用的场景（将子应用当作组件来使用）<br/>
         404：测试子应用通过派发组件的方式直接注册到路由（实现<b>页面/路由复用</b>）<br/>
         react组件测试：测试<b>不同框架渲染React组件</b>的能力（vue也可以直接使用React组件）
@@ -70,12 +70,21 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { useRouter } from 'vue-router'; 
+
+const router = useRouter();
+</script>
 
 <style lang="scss" scoped>
 .introduce {
   .bg-white {
     background-color: white;
+  }
+  a, .link {
+    color: #409eff;
+    text-decoration: underline;
+    cursor: pointer;
   }
 }
 </style>

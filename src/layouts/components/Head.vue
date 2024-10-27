@@ -9,7 +9,7 @@
       <span class="__name">MicroAdmin</span>
     </div>
     <div class="__right">
-      <div class="action-list">
+      <div class="action-list" :ref="(ref: any) => tourStepsRefs[0] = ref">
         <div
           class="action-item"
           @click="openDocsLink()"
@@ -61,6 +61,7 @@ import 'element-plus/es/components/dropdown/style/index';
 import 'element-plus/es/components/dropdown-menu/style/index';
 import 'element-plus/es/components/dropdown-item/style/index';
 import useGlobalStore from '@/store';
+import { tourStepsRefs } from '@/layouts/hook';
 
 const globalStore = useGlobalStore();
 

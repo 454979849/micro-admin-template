@@ -1,6 +1,6 @@
 <template>
   <div class="micromainComponent">
-    <section class="-m-card lightcoral">
+    <section class="-m-card">
       <span class="-m-title">二次封装Element-Plus Dialog弹窗</span>
       <button @click="dataElDialog.open()">点击弹窗</button>
     </section>

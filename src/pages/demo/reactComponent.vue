@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="-m-card lightcoral">
+    <section class="-m-card">
       <span
         className="-m-title"
         @click="increaseDouble"
@@ -13,7 +13,7 @@
       ></ReactComponent>
     </section>
 
-    <section class="-m-card lightcoral">
+    <section class="-m-card">
       <span className="-m-title">这是第三方react组件</span>
       <span>//TODO</span>
     </section>
