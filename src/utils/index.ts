@@ -138,11 +138,3 @@ export function copyText(text: string, success?: () => void, fail?: (res: string
     fail && fail('复制失败');
   }
 }
-
-/**
- * 判断是否外部链接
- * @param path 路径
- */
-export function isExternal(path: string) {
-  return /^(https?:|mailto:|tel:)/.test(path);
-}
