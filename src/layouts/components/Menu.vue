@@ -17,6 +17,7 @@
     </div>
     <el-menu
       :default-active="menuActiveIndex"
+      :default-openeds="defaultOpenMenuList"
       @select="handleMenuChange"
     >
       <MenuItem
@@ -59,6 +60,9 @@ const router = useRouter();
 
 /** 菜单关键词 */
 const menuKeyWord = ref('');
+
+/** 默认展开的父级菜单 */
+const defaultOpenMenuList = ref(['0', '2']);
 
 watch(
   () => menuKeyWord.value,

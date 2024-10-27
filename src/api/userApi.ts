@@ -30,7 +30,7 @@ export async function getUserMenus() {
         // {
         //   id: '555',
         //   parentId: '111',
-        //   prefixName: '/主应用页面调试',
+        //   prefixName: '/主应用页面',
         //   name: '登录页',
         //   componentStr: '/login.vue',
         //   sort: 0,
@@ -41,7 +41,7 @@ export async function getUserMenus() {
         // {
         //   id: '666',
         //   parentId: '111',
-        //   prefixName: '/主应用页面调试',
+        //   prefixName: '/主应用页面',
         //   name: '无菜单页面',
         //   componentStr: '/noMenu.vue',
         //   sort: 0,
@@ -52,7 +52,7 @@ export async function getUserMenus() {
         // {
         //   id: '667',
         //   parentId: '111',
-        //   prefixName: '/主应用页面调试',
+        //   prefixName: '/主应用页面',
         //   name: '404页面',
         //   componentStr: '/404.vue',
         //   sort: 0,
@@ -63,7 +63,7 @@ export async function getUserMenus() {
         {
           id: '667',
           parentId: '111',
-          prefixName: '/主应用页面调试',
+          prefixName: '/主应用页面',
           name: '在线预览网站',
           componentStr: '/404.vue',
           sort: 0,
@@ -74,7 +74,7 @@ export async function getUserMenus() {
         // {
         //   id: '667',
         //   parentId: '111',
-        //   prefixName: '/主应用页面调试',
+        //   prefixName: '/主应用页面',
         //   name: '派发组件源测试',
         //   componentStr: '/404.vue',
         //   sort: 0,
@@ -85,7 +85,7 @@ export async function getUserMenus() {
         // {
         //   id: '667',
         //   parentId: '111',
-        //   prefixName: '/主应用页面调试',
+        //   prefixName: '/主应用页面',
         //   name: 'lottie源测试',
         //   componentStr: '/demo/lottie.vue',
         //   sort: 0,
@@ -96,7 +96,7 @@ export async function getUserMenus() {
         {
           id: '667',
           parentId: '111',
-          prefixName: '/主应用页面调试',
+          prefixName: '/主应用页面',
           name: 'react组件测试',
           componentStr: '/demo/reactComponent.vue',
           sort: 0,
@@ -107,7 +107,7 @@ export async function getUserMenus() {
         {
           id: '667',
           parentId: '111',
-          prefixName: '/主应用页面调试',
+          prefixName: '/主应用页面',
           name: 'vueFlow测试',
           componentStr: '/demo/vueFlow.vue',
           sort: 0,
@@ -118,7 +118,7 @@ export async function getUserMenus() {
         {
           id: '667',
           parentId: '111',
-          prefixName: '/主应用页面调试',
+          prefixName: '/主应用页面',
           name: '阿里低代码',
           componentStr: '/demo/lowcodeEngine.vue',
           sort: 0,
@@ -128,7 +128,7 @@ export async function getUserMenus() {
         },
       ],
       prefixName: '/',
-      name: '主应用页面调试',
+      name: '主应用页面',
       icon: 'https://pro.spicyboy.cn/assets/svg/logo-CqE24J1b.svg',
       sort: 0,
       hidden: false,
