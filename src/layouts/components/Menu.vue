@@ -25,6 +25,7 @@
         :key="menuInfo.id"
         :menuInfo="menuInfo"
         :level="'' + index"
+        :ref="(ref: any) => tourStepsRefs[index + 1] = ref"
       ></MenuItem>
     </el-menu>
   </el-scrollbar>
@@ -53,6 +54,7 @@ import { subAppPath } from '@/pages/SubMicroApp.vue';
 import CONSTS from '@/utils/CONSTS';
 import { currentRouteFullName } from './RouteInfoBar.vue';
 import useGlobalStore from '@/store';
+import { tourStepsRefs } from '@/layouts/hook';
 
 const globalStore = useGlobalStore();
 const route = useRoute();
