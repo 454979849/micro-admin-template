@@ -30,10 +30,12 @@
 
 .-m-card {
   border-radius: 4px;
-  padding: 10px 6px;
-  margin-bottom: 10px;
+  padding: 18px;
+  margin-bottom: 14px;
   overflow: hidden;
+  color: #1C1E21;
   background-color: white;
+  line-height: 1.6em;
 
   &.lightblue {
     background-color: lightblue;
@@ -86,7 +88,7 @@
   .-m-title {
     display: block;
     position: relative;
-    font-size: 16px;
+    font-size: 17.5px;
     color: #333;
     font-weight: 600;
     padding-left: 8px;
