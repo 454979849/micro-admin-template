@@ -15,6 +15,16 @@
       >
         <div
           class="action-item"
+          @click="toIntroducePage()"
+        >
+          <use-svg
+            name="docs-question"
+            size="18px"
+          ></use-svg>
+          <span>介绍页</span>
+        </div>
+        <div
+          class="action-item"
           @click="openDocsLink()"
         >
           <use-svg
@@ -65,6 +75,7 @@ import 'element-plus/es/components/dropdown-menu/style/index';
 import 'element-plus/es/components/dropdown-item/style/index';
 import useGlobalStore from '@/store';
 import { tourStepsRefs } from '@/layouts/hook';
+import router from '@/router';
 
 const globalStore = useGlobalStore();
 
@@ -78,6 +89,11 @@ function clearCache() {
 
 /** //TODO: 跳转用户中心页面 */
 function toUserCenterPage() {}
+
+/** 跳到介绍页 */
+function toIntroducePage() {
+  router.push('/introduce');
+}
 
 /** 打开项目文档 */
 function openDocsLink() {
