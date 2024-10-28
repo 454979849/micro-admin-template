@@ -33,8 +33,6 @@ export default {
   hostname: subAppLocation?.hostname,
   /** 不同环境origin */
   originMap: originMap,
-  /** 后台返回文件地址组合前缀 */
-  uploadFilePrefix: '/api/comservice-server',
   /** token名称 */
   get tokenKey() {
     return '';
