@@ -14,13 +14,17 @@
           alt="icon"
         />
         <!-- svg图标 -->
-        <use-svg v-else class="__menu-icon" :name="menuInfo.icon"/>
+        <use-svg
+          v-else
+          class="__menu-icon"
+          :name="menuInfo.icon"
+        />
       </template>
-      
+
       <span class="-m-ellipsis">{{ menuInfo.name }}</span>
     </template>
     <MenuItem
-      v-for="(item, index) in props.menuInfo.children"
+      v-for="(item, index) in props.menuInfo.children.filter((menu: any) => !menu.hidden)"
       :key="item.id"
       :menuInfo="item"
       :level="`${props.level}-${index}`"
@@ -32,10 +36,11 @@
   >
     <!-- //TODO 链接转换为主应用下的 -->
     <a
+      style="color: #303133"
       :href="props.menuInfo.path"
       @click="(e) => e.preventDefault()"
-      >{{ props.menuInfo.name }}</a
-    >
+      >{{ props.menuInfo.name }}
+    </a>
   </el-menu-item>
 </template>
 

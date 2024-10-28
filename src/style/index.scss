@@ -3,6 +3,11 @@
   overflow: hidden;
 }
 
+micro-app-body,
+.render-root {
+  height: 100%;
+}
+
 #__micro-app-main {
   width: 100vw;
 

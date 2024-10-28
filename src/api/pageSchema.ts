@@ -5,7 +5,7 @@ import { env, host } from '@/components/use-schema-render/config';
  */
 export async function findPageSchemaByNodeId(params: { nodeId: number }) {
   const response = await fetch(
-    `${env === 'localhost' ? '/api' : host}/page-schema/${params.nodeId}`,
+    `${env === 'localhost' ? '/nest' : host}/page-schema/${params.nodeId}`,
     {
       method: 'get',
     }

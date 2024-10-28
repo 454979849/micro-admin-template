@@ -1,4 +1,5 @@
-import { getUserInfo, getUserMenus } from '@/api/userApi';
+import { getMenuTree } from '@/api/menu';
+import { getUserInfo } from '@/api/userApi';
 import { parseMenus, validateRoutes } from '@/router/helper';
 import { MenuItemType, UserInfoType } from '@/types/common';
 import Config from '@/utils/Config';
@@ -42,10 +43,12 @@ const useGlobalStore = defineStore({
 
     /** 加载菜单 */
     async loadMenu() {
-      const res = await getUserMenus();
+      const res = await getMenuTree();
+      // const res = await getUserMenus();
       if (res.code == 1 && res.data) {
-        const _menus = res.data.menus || [];
-        const permissions = res.data.permissions || [];
+        const _menus = res.data || [];
+        // const _menus = res.data.menus || [];
+        const permissions = res.data?.permissions || [];
         const menus = parseMenus(_menus);
         this.updateMenu(menus || []);
         this.updatePermissions(permissions);
@@ -68,7 +71,8 @@ const useGlobalStore = defineStore({
       }
     },
   },
-  persist: true,
+  // 是否持久化
+  persist: false,
 });
 
 export default useGlobalStore;

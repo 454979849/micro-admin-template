@@ -21,7 +21,7 @@
       @select="handleMenuChange"
     >
       <MenuItem
-        v-for="(menuInfo, index) in menus"
+        v-for="(menuInfo, index) in menus.filter((menu) => !menu.hidden)"
         :key="menuInfo.id"
         :menuInfo="menuInfo"
         :level="'' + index"
@@ -158,6 +158,7 @@ function handleMenuChange(key: string) {
     }
   }
 
+  // TODO触发时机改为路由跳转后，兼容首次进入及代码跳转情况
   if ([0, 1].includes(menuInfo.targetType))
     currentRouteFullName.value = `${menuInfo.prefixName}/${menuInfo.name}`;
 }

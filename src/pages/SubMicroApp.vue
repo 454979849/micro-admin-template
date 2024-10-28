@@ -28,5 +28,7 @@ const subAppName = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-/** */
+.SubMicroApp {
+  height: 100%;
+}
 </style>

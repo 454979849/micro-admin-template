@@ -39,10 +39,11 @@ export default defineConfig({
     host: '0.0.0.0',
     cors: true,
     proxy: {
-      '/api': {
+      /** request发起的请求都以/nest开头 */
+      '/nest': {
         target: 'http://localhost:9000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/nest/, ''),
       },
     },
   },

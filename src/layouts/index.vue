@@ -82,6 +82,7 @@ import { ref } from 'vue';
         flex: 1;
         background-color: #f5f5f5;
         .__inner-container {
+          height: 100%;
           padding: 10px;
         }
       }

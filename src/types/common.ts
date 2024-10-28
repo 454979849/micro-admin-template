@@ -11,7 +11,7 @@ export type MenuOriginType = {
 
   /** 排序, 越小越靠前 */
   sort: number;
-  /** 是否显示菜单 */
+  /** 是否隐藏菜单 */
   hidden: boolean;
 
   /** 菜单id */
