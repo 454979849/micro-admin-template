@@ -1,13 +1,6 @@
 <template>
-  <el-scrollbar class="__menu">
-    <div
-      style="
-        position: relative;
-        padding: 6px 8px;
-        box-shadow: 0 10px 20px #9d9d9d1f;
-        z-index: 1;
-      "
-    >
+  <div class="__menu">
+    <div class="__search-btn">
       <el-input
         clearable
         v-model="menuKeyWord"
@@ -15,20 +8,22 @@
         size="small"
       ></el-input>
     </div>
-    <el-menu
-      :default-active="menuActiveIndex"
-      :default-openeds="defaultOpenMenuList"
-      @select="handleMenuChange"
-    >
-      <MenuItem
-        v-for="(menuInfo, index) in menus.filter((menu) => !menu.hidden)"
-        :key="menuInfo.id"
-        :menuInfo="menuInfo"
-        :level="'' + index"
-        :ref="(ref: any) => tourStepsRefs[index + 1] = ref"
-      ></MenuItem>
-    </el-menu>
-  </el-scrollbar>
+    <el-scrollbar>
+      <el-menu
+        :default-active="menuActiveIndex"
+        :default-openeds="defaultOpenMenuList"
+        @select="handleMenuChange"
+      >
+        <MenuItem
+          v-for="(menuInfo, index) in menus.filter((menu) => !menu.hidden)"
+          :key="menuInfo.id"
+          :menuInfo="menuInfo"
+          :level="'' + index"
+          :ref="(ref: any) => tourStepsRefs[index + 1] = ref"
+        ></MenuItem>
+      </el-menu>
+    </el-scrollbar>
+  </div>
 </template>
 
 <script lang="ts">
@@ -192,6 +187,17 @@ function filterMenuByKeyWord(menuList: Array<MenuItemType>): Array<MenuItemType>
 
 <style lang="scss" scoped>
 .__menu {
-  border-right: 1px solid rgb(240, 240, 240);
+  border-right: 1px solid #dcdfe6;
+  :deep(.main-el-menu) {
+    border-right: none;
+  }
+  .__search-btn {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding: 6px 8px;
+    box-shadow: 0 10px 20px #9d9d9d1f;
+    z-index: 1;
+  }
 }
 </style>

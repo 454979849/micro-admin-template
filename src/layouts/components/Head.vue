@@ -112,7 +112,7 @@ function openGithubLink() {
   background-color: white;
   width: 100%;
   box-shadow: 0 1px 4px rgb(169 169 169 / 50%);
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
