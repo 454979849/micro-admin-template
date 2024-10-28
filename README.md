@@ -5,7 +5,8 @@
 ## 相关仓库
 
 - [vue3 子应用模板](https://github.com/LAMMUpro/subapp-vue3-template.git)
-- [vue2 子应用模板](https://github.com/LAMMUpro/subapp-vue2-template.git)
+- [vue2+webpack 子应用模板](https://github.com/LAMMUpro/subapp-vue2-webpack-template.git)
+- [vue2+vite 子应用模板](https://github.com/LAMMUpro/subapp-vue2-vite-template.git)
 - [react18 子应用模板](https://github.com/LAMMUpro/subapp-react18-template.git)
 
 ## 下载项目模板
@@ -19,8 +20,10 @@ cd ./micro-admin-template/apps
 git clone https://github.com/LAMMUpro/subapp-react18-template.git
 # vue3子应用
 git clone https://github.com/LAMMUpro/subapp-vue3-template.git
-# vue2子应用
-git clone https://github.com/LAMMUpro/subapp-vue2-template.git
+# vue2+webpack子应用
+git clone https://github.com/LAMMUpro/subapp-vue2-webpack-template.git
+# vue2+vite子应用
+git clone https://github.com/LAMMUpro/subapp-vue2-vite-template.git
 ```
 
 ## 运行步骤
@@ -38,9 +41,9 @@ npm run build # 如果提示tsc不存在则运行npm install -g typescript
 yarn dev
 ```
 
-## 技术栈
+## 运行依赖
 
-- pnpm
+- yarn
 - node > 16.18.0
 
 ## 已集成
@@ -58,13 +61,12 @@ yarn dev
 - (暂时禁用)husky / commitlint git 提交校验 ✔
 - element-plus (组件及样式按需引入) ✔
 - react18 子应用 ✔
-- vue3 子应用
-- vue2 子应用
-- MicroApp 封装
+- vue3 子应用 ✔
+- vue2 子应用 ✔
+- MicroApp 封装 ✔
   - init 显式初始化 ✔
 
-
-## micro-app-tools发包
+## micro-app-tools 发包
 
 ```sh
 npm config set registry https://registry.npmjs.com
