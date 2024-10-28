@@ -1,4 +1,5 @@
 import { MenuOriginType } from '@/types/common';
+import defaultAvatar from '@/assets/images/defaultAvatar.png';
 
 /**
  * // TODO: 获取用户信息
@@ -8,10 +9,10 @@ export async function getUserInfo() {
   return {
     code: 1,
     data: {
-      avatar: 'https://pro.spicyboy.cn/assets/svg/logo-CqE24J1b.svg',
+      avatar: defaultAvatar,
       email: 'ccc.126.com',
       id: '10086',
-      name: '张小凡',
+      name: '管理员',
       phone: '11111111111',
     },
   };

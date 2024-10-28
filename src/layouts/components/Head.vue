@@ -3,20 +3,23 @@
     <div class="__logo-div">
       <img
         class="__logo"
-        src="https://pro.spicyboy.cn/assets/svg/logo-CqE24J1b.svg"
+        src="/favicon.ico"
         alt="logo"
       />
       <span class="__name">MicroAdmin</span>
     </div>
     <div class="__right">
-      <div class="action-list" :ref="(ref: any) => tourStepsRefs[0] = ref">
+      <div
+        class="action-list"
+        :ref="(ref: any) => tourStepsRefs[0] = ref"
+      >
         <div
           class="action-item"
           @click="openDocsLink()"
         >
           <use-svg
             name="docs-question"
-            size="24px"
+            size="18px"
           ></use-svg>
           <span>项目文档</span>
         </div>
@@ -26,7 +29,7 @@
         >
           <use-svg
             name="Github"
-            size="24px"
+            size="18px"
           ></use-svg>
           <span>源码</span>
         </div>
@@ -103,6 +106,7 @@ function openGithubLink() {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0 20px 0 10px;
     .__logo {
       width: 40px;
       height: 40px;
@@ -120,6 +124,7 @@ function openGithubLink() {
       display: flex;
       margin-right: 30px;
       .action-item {
+        padding-top: 4px;
         font-size: 10px;
         margin-left: 12px;
         cursor: pointer;
