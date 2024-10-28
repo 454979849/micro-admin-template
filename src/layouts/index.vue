@@ -15,7 +15,7 @@
           </div>
         </el-scrollbar>
         <div class="__footer">
-          <span>
+          <span class="-m-ellipsis">
             <span class="__copyright">2024 © MicroAdmin By Lammu</span>
             <a
               href="https://beian.miit.gov.cn"
